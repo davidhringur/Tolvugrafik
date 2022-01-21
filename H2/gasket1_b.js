@@ -42,8 +42,10 @@ window.onload = function init()
     // last point and a randomly chosen vertex
 
     for ( var i = 0; points.length < NumPoints; ++i ) {
-        var j = Math.floor(Math.random() * 3);
-
+        var j = Math.floor(Math.random() * 20);
+        if (j>2) {
+            j=0;
+        }
         p = add( points[i], vertices[j] );
 
         p = mult( 0.5, p );
