@@ -1,0 +1,86 @@
+<html>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+attribute  vec4 vPosition;
+
+uniform mat4 projection;
+uniform mat4 modelview;
+
+void main() 
+{
+    gl_Position = projection * modelview * vPosition;
+} 
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+   
+uniform vec4 wireColor;
+
+void
+main()
+{
+    gl_FragColor = wireColor;
+}
+</script>
+
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="stereocube.js"></script>
+
+<body>
+    <div>
+        n x n x n    4<input id="N" type="range"
+            min="4" max="40" step="1" value="10" />
+            40
+    </div>
+    <div>
+        Starting number of sheep    1<input id="startSheepNum" type="range"
+            min="1" max="100" step="1" value="10" />
+            100
+    </div>
+    <div>
+        Starting number of wolfs    1<input id="startWolfNum" type="range"
+            min="1" max="100" step="1" value="2" />
+            100
+    </div>
+    <div>
+        How hungry can the wolfs get before they die    4<input id="hunger" type="range"
+            min="4" max="100" step="1" value="21" />
+            100
+    </div>
+    <div>
+        How many sheep does a wolf have to kill to get a child wolf    4<input id="wolfChild" type="range"
+            min="4" max="200" step="1" value="80" />
+            200
+    </div>
+    <div>
+        How long does a sheep have to wait to get a child    4<input id="sheepChild" type="range"
+            min="4" max="100" step="1" value="20" />
+            100
+    </div>
+
+    <div>
+        Simulation SPEED    4<input id="SimSpeed" type="range"
+            min="4" max="100" step="1" value="15" />
+            100
+    </div>
+
+
+
+    
+
+
+
+    <button type="button" id="resetBtn" onclick="">Reset Simulation</button>
+<canvas id="gl-canvas" width="500" height="500">
+   
+<br/>
+
+
+</body>
+</html>
