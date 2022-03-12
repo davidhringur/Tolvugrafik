@@ -190,23 +190,26 @@ window.onload = function init()
                 break;
             
             case 37:
-                X-=1;
+                Y+=Math.sin(spinY+90);
+                X+=Math.cos(spinY+90);
                 break;
             case 38:    // up arrow
                 if (view == 0){
-                    Y+=Math.sin(spinY/360 * 2 * Math.PI);
-                    X+=Math.sin(spinY/360 * 2 * Math.PI);
+                    Y+=Math.sin(spinY);
+                    X+=Math.cos(spinY);
                     break;
                 }
                 height += 2.0;
                 document.getElementById("Height").innerHTML = "Viðbótarhæð: "+ height;
                 break;
             case 39:
-                X+=1;
+                Y-=Math.sin(spinY+90);
+                X-=Math.cos(spinY+90);
                 break;
             case 40:    // down arrow
                 if (view == 0){
-                    Y-=1;
+                    Y-=Math.sin(spinY);
+                    X-=Math.cos(spinY);
                     break;
                 }
                 height -= 2.0;
@@ -414,7 +417,6 @@ function render()
         drawCar( mv );
         break;
     case 0:
-        spin = spinY/360 * 2 * Math.PI
         mv = lookAt( vec3(X, Y, 5), vec3(X+Math.cos(spinY), Y+Math.sin(spinY), 5.0), vec3(0.0, 0.0, 1.0 ) );
         //X = Math.cos(spinX)*100 ; Y = Math.sin(spinX)*100 ; 
         
