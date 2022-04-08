@@ -1,0 +1,27 @@
+
+# Two waves, one from center and one from left-upper corner
+
+T = 3.7  # Period
+labda = 11.2 # Wavelength
+
+t = 20 # Current time
+
+R_0 = 0 # Rank for left upper corner cell
+R_C = ? # Rank for center cell
+
+
+
+
+{   
+    # from first wave
+    x  = catesian_distance(R_0, rank)
+    theta = 2 * pi * (x/labda-t/T)
+    elevation1 = sin(theta)
+
+    # from second wave
+    x  = catesian_distance(R_C, rank)
+    theta = 2 * pi * (x/labda-t/T)
+    elevation2 = sin(theta)
+
+    TotalElevation = elevation1 + elevation2
+}
