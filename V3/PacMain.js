@@ -179,11 +179,11 @@ const animate = function () {
 
     var vector = new THREE.Vector3();
     camera.getWorldDirection( vector );
-    const elementx = document.getElementById("idlooking");
-    const elementy = document.getElementById("idPos");
-    const elementz = document.getElementById("idz");
-    elementx.innerHTML = "LOOKING   x: "+ Math.round(vector.x * 100.0) / 100.0 + "  y: "+ Math.round(vector.y * 100.0) / 100.0+"  z: "+Math.round(vector.z * 100.0) / 100.0 ;
-    elementy.innerHTML = "x: "+ Math.round(controls.target.x * 100.0) / 100.0 + "  y: "+ Math.round(controls.target.y * 100.0) / 100.0+"  z: "+Math.round(controls.target.z * 100.0) / 100.0 ;
+    //const elementx = document.getElementById("idlooking");
+    //const elementy = document.getElementById("idPos");
+    //const elementz = document.getElementById("idz");
+    //elementx.innerHTML = "LOOKING   x: "+ Math.round(vector.x * 100.0) / 100.0 + "  y: "+ Math.round(vector.y * 100.0) / 100.0+"  z: "+Math.round(vector.z * 100.0) / 100.0 ;
+    //elementy.innerHTML = "x: "+ Math.round(controls.target.x * 100.0) / 100.0 + "  y: "+ Math.round(controls.target.y * 100.0) / 100.0+"  z: "+Math.round(controls.target.z * 100.0) / 100.0 ;
     //elementz.innerHTML = ;
     turn()
 
